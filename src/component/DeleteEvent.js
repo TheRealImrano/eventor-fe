@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import UpdateEventForm from './UpdateEventForm';
-function Deleteevent() {
+function DeleteEvent() {
   const [events, setEvents] = useState([]);
   
   const fetchEvents = async () => {
@@ -21,7 +21,7 @@ function Deleteevent() {
     fetchEvents();
   }, []);
 
-  const Deleteevent = async (eventId) => {
+  const DeleteEvent = async (eventId) => {
     await fetch(`https://localhost:7015/api/events/${eventId}`, {
       method: 'DELETE',
       headers: {
@@ -110,7 +110,7 @@ function Deleteevent() {
         <span className="card-duration">{event.eventDuration}</span>
       </div>
       <p className="card-description">{event.eventDescription}</p>
-      <button className="card-button mx-3" onClick={() => Deleteevent(event.eventId)}>DELETE</button> 
+      <button className="card-button mx-3" onClick={() => DeleteEvent(event.eventId)}>DELETE</button> 
       <button className="card-button" onClick={() => handleUpdateClick(event)}>Update</button>
     
     </div>
@@ -122,5 +122,5 @@ function Deleteevent() {
   );
 }
 
-export default Deleteevent;
-{/* <button onClick={() => Deleteevent(event.eventId)}>Delete</button> */}
+export default DeleteEvent;
+{/* <button onClick={() => DeleteEvent(event.eventId)}>Delete</button> */}

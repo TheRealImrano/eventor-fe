@@ -22,7 +22,7 @@ function Home() {
          
           <li style={{ display: 'inline-block', marginRight: '20px' }}>
             <Link
-              to="/addevent"
+              to="/AddEvent"
               style={{
                 color: 'white',
                 backgroundColor: '#0077b6',
@@ -36,7 +36,7 @@ function Home() {
           </li>
           <li style={{ display: 'inline-block',marginRight: '20px' }}>
             <Link
-              to="/deleteevent"
+              to="/DeleteEvent"
               style={{
                 color: 'white',
                 backgroundColor: '#0077b6',

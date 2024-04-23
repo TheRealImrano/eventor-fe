@@ -33,7 +33,7 @@ export default function UserEvent(){
     }
     , []);
 
-    const Deleteevent = async (eventId) => {
+    const DeleteEvent = async (eventId) => {
         // Add Your Api.
         await fetch(`https://localhost:7015/api/joins/${eventId}`, {
           method: 'DELETE',
@@ -59,7 +59,7 @@ export default function UserEvent(){
         {Users.map((event) => (
         <tr>
             <td>{event.eventName}</td>
-            <td><button className="card-button" onClick={() => Deleteevent(event.u_Id)}>Delete</button></td>
+            <td><button className="card-button" onClick={() => DeleteEvent(event.u_Id)}>Delete</button></td>
         </tr>
         ))}
     </tbody>

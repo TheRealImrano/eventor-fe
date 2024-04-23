@@ -1,3 +1,5 @@
+/*m
+ 
 import { useState } from 'react';
 import './style.css';
 const ChatbotPopup = () => {
@@ -31,9 +33,9 @@ const ChatbotPopup = () => {
     setOutputResult('');
     setIsOpen(false);
   };
-
-  return (
-    <div className={`chatbot-popup ${isOpen ? 'open' : ''}`}>
+*/
+  // return (
+  //   <div className={`chatbot-popup ${isOpen ? 'open' : ''}`}>
       {/* <div className="chatbot-toggle" onClick={handleTogglePopup}>
         <img src={require(`./chatbot.png`)} alt="Chatbot Icon" />
       </div>
@@ -63,8 +65,8 @@ const ChatbotPopup = () => {
           </form>
         </div>
       </div> */}
-    </div>
-  );
-};
+//     </div>
+//   );
+// };
 
-export default ChatbotPopup;
+// export default ChatbotPopup;

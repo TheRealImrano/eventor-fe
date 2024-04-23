@@ -11,7 +11,7 @@ function Joined() {
            .then(data => setEvents(data));
        }, []);
 
-       const Deleteevent = async (eventId) => {
+       const DeleteEvent = async (eventId) => {
         await fetch(`https://localhost:7015/api/joins/${eventId}`, {
           method: 'DELETE',
           headers: {
@@ -42,10 +42,10 @@ function Joined() {
     {events.map((event) => (
       <tr>
         <td>{event.u_Id}</td>
-        <td>{event.userName}</td>
+        <td>{event.username}</td>
         <td>{event.eventName}</td>
         <td>{event.contactNumber}</td>
-       <td><button className="card-button" onClick={() => Deleteevent(event.u_Id)}>Delete</button></td>
+       <td><button className="card-button" onClick={() => DeleteEvent(event.u_Id)}>Delete</button></td>
       </tr>
     ))}
   </tbody>

@@ -70,10 +70,10 @@ export default function SingleEvent() {
           (record) => record.eventName === eventName && record.userName === username
         );
         // const data1 = await response1.json();
-        // const isOrganizer = data1.find(
-        //   (record) => record.userName === username && record.IsOrganiser
+        // const is_organizer = data1.find(
+        //   (record) => record.userName === username && record.is_organizer
         // );
-        // console.log(isOrganizer);
+        // console.log(is_organizer);
         
     
         if(existingRecord) {

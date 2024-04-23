@@ -7,14 +7,14 @@ function Login(){
     const[user,setuser]=useState([
       // This data was added for testing purpose
       {
-        UserEmail: "AliImran@gmail.com",
+        email: "AliImran@gmail.com",
         password: "ajajajaj",
-        userName: "Ali Imran",
-        contactNumber: 987654321,
-        IsOrganiser: true
+        username: "Ali Imran",
+        contact_number: 987654321,
+        is_organizer: true
       }
     ]);
-    const[credentials,setcredentials]=useState({userName:"",password:""});
+    const[credentials,setcredentials]=useState({username:"",password:""});
     const navigate=useNavigate();
    
     
@@ -34,17 +34,17 @@ function Login(){
         user.map((e) => {
 
            
-             if (e.userName=== credentials.userName && e.password === credentials.password) {
+             if (e.username=== credentials.username && e.password === credentials.password) {
                 isuser=true;
-                localStorage.setItem('username', e.userName);
+                localStorage.setItem('username', e.username);
 
                 navigate("/fetchEvent"); 
             }
            
         }) 
-        // console.log(credentials.userName);
+        // console.log(credentials.username);
         // console.log(credentials.password);
-        if(credentials.userName=== "admin" && credentials.password=== "admin")
+        if(credentials.username=== "admin" && credentials.password=== "admin")
             {
                 navigate("/adminhome");
             }
@@ -70,10 +70,10 @@ function Login(){
 
             {/* <form onSubmit={handlesubmit} className="event-form">
                 <div className="form-group">
-                    <label htmlFor="userName">User Name:</label>
+                    <label htmlFor="username">User Name:</label>
                     <input
                         type="text"
-                        name="userName"
+                        name="username"
                        
                         onChange={onChange}
                     />
@@ -91,7 +91,7 @@ function Login(){
                 </div>
                 <button type="submit">Login</button> */}
 
-                {/* <input type="text" name="userName"  onChange={onChange} placeholder="Enter Name" required/>
+                {/* <input type="text" name="username"  onChange={onChange} placeholder="Enter Name" required/>
                 <input type="password" name="password" onChange={onChange} placeholder="Enter Password" required/>
                 <button type="submit">Login</button> */}
             {/* </form> */}
@@ -104,7 +104,7 @@ function Login(){
   <form onSubmit={handlesubmit} method='post'>
     <div className="field">
       <span className="fa fa-user"></span>
-      <input type="text" onChange={onChange} name='userName' required placeholder="username" />
+      <input type="text" onChange={onChange} name='username' required placeholder="username" />
     </div>
     <div className="field space">
       <span className="fa fa-lock"></span>

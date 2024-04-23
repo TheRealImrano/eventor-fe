@@ -4,22 +4,22 @@ import './register.css'
 import { NavLink } from "react-router-dom";
 
 function Register() {
-    const [UserEmail, setUserEmail] = useState("");
+    const [email, setemail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
-    const [contactNumber,setcontactNumber]=useState("");
-    const [IsOrganiser,setIsOrganiser]=useState(false);
+    const [contact_number,setcontact_number]=useState("");
+    const [is_organizer,setis_organizer]=useState(false);
     const navigate = useNavigate();
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const newuser = {
-            UserEmail,
+            email,
             password,
             username,
-            contactNumber,
-            IsOrganiser
+            contact_number,
+            is_organizer
         };
         try {
             const response = fetch("https://localhost:7015/api/users", {
@@ -35,7 +35,7 @@ function Register() {
                 navigate("/fetchEvent");
             
             localStorage.setItem('username', username);
-            localStorage.setItem('contactnumber',contactNumber);
+            localStorage.setItem('contact_number',contact_number);
 
             // navigate('/fetchevent');
 
@@ -46,7 +46,7 @@ function Register() {
     }
 
     const handleOrganizer = (e) => {
-        setIsOrganiser(e.target.value === 'true');
+        setis_organizer(e.target.value === 'true');
     }
 
 
@@ -104,8 +104,8 @@ function Register() {
             </div>
             <div className="field space">
               <span className="fa fa-user"></span>
-              <input type="email" name='email' value={UserEmail}
-                onChange={(e) => setUserEmail(e.target.value)} required placeholder="Email " />
+              <input type="email" name='email' value={email}
+                onChange={(e) => setemail(e.target.value)} required placeholder="Email " />
 
             </div>
             <div className="field space">
@@ -115,17 +115,17 @@ function Register() {
             </div>
             <div className="field space">
                 <span className="fa fa-phone"></span>
-                <input type="number" name='number' value={contactNumber} onChange={(e)=> setcontactNumber(e.target.value)}
+                <input type="number" name='number' value={contact_number} onChange={(e)=> setcontact_number(e.target.value)}
                   required placeholder="contact number" />
             </div>
             <div className="">
 
            <label>
-            <input type="radio" name="organizer" value="true" checked={IsOrganiser} onChange={handleOrganizer} />
+            <input type="radio" name="organizer" value="true" checked={is_organizer} onChange={handleOrganizer} />
             Organizer
            </label>
            <label>
-            <input type="radio" name="!organizer" value="false" checked={!IsOrganiser} onChange={handleOrganizer} />
+            <input type="radio" name="!organizer" value="false" checked={!is_organizer} onChange={handleOrganizer} />
             Attendee
            </label>
            </div>

@@ -1,27 +1,27 @@
 import React,{useState} from "react";
 import './style.css'    
 
-function Addevent() {
-const [eventName, seteventName] = useState("");
-const [eventDescription, seteventDescription] = useState("");
-const [eventLocation, seteventLocation] = useState("");
-const [eventDate, seteventDate] = useState("");
-const [eventDuration, seteventDuration] = useState("");
-const [isPrivate,setIsPrivate] = useState(false);
+function AddEvent() {
+const [event_name, setevent_name] = useState("");
+const [event_description, setevent_description] = useState("");
+const [event_location, setevent_location] = useState("");
+const [event_date, setevent_date] = useState("");
+const [event_duration, setevent_duration] = useState("");
+const [is_private, setis_private] = useState(false);
 
 const handleChange = (event) => {
-  setIsPrivate(event);
+  setis_private(event);
 }
 
 const handleSubmit = async (e) => {
     e.preventDefault();
     const newevent = {
-      eventName,
-      eventDescription,
-      eventLocation,
-      eventDate,
-      eventDuration,
-      isPrivate
+      event_name,
+      event_description,
+      event_location,
+      event_date,
+      event_duration,
+      is_private
     };
     console.log(newevent);
     try {
@@ -51,55 +51,55 @@ const handleSubmit = async (e) => {
     <div className="contentRS">
          <form onSubmit={handleSubmit} className="event-form" >
          <div  className="form-group">
-         <label htmlFor="eventName">Event Name:</label>
+         <label htmlFor="event_name">Event Name:</label>
        
         
         <input
           type="text"
-          value={eventName}
-          onChange={(e) => seteventName(e.target.value)}
+          value={event_name}
+          onChange={(e) => setevent_name(e.target.value)}
         /> </div>
          <div className="form-group">
-      <label htmlFor="eventDescription"> 
+      <label htmlFor="event_description"> 
         event Description:</label>
         <textarea
-          value={eventDescription}
-          onChange={(e) => seteventDescription(e.target.value)}
+          value={event_description}
+          onChange={(e) => setevent_description(e.target.value)}
         />
       </div>
       <div className="form-group">
-      <label htmlFor="eventLocation">
+      <label htmlFor="event_location">
         event Location: </label>
         <input
           type="text"
-          value={eventLocation}
-          onChange={(e) => seteventLocation(e.target.value)}
+          value={event_location}
+          onChange={(e) => setevent_location(e.target.value)}
         />
       
       </div>
       <div className="form-group">
 
-      <label htmlFor="eventdate">
+      <label htmlFor="event_date">
         event Date: </label>
         <input
           type="date"
-          value={eventDate}
-          onChange={(e) => seteventDate(e.target.value)}
+          value={event_date}
+          onChange={(e) => setevent_date(e.target.value)}
         />
         </div>
         <div className="form-group">
-      <label htmlFor="eventDuration" >
+      <label htmlFor="event_duration" >
         event Duration:</label>
         <input
           type="text"
-          value={eventDuration}
-          onChange={(e) => seteventDuration(e.target.value)}
+          value={event_duration}
+          onChange={(e) => setevent_duration(e.target.value)}
         />
         <div style={{display: 'flex',alignItems: 'center',justifyContent: 'center',gap: '2px'}}>
             <label > 
 
           
-            <input type="radio" onChange={(e)=>handleChange(!isPrivate)} value={isPrivate} checked="">
+            <input type="radio" onChange={(e)=>handleChange(!is_private)} value={is_private} checked="">
               </input>           
               <text>Is Private   </text>
             </label>
@@ -112,4 +112,4 @@ const handleSubmit = async (e) => {
   );
 }
 
-export default Addevent;
+export default AddEvent;
